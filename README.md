@@ -26,3 +26,9 @@ Menu:
 	Abrir o branco
 	Historico do banco
 	Sair
+
+
+cliente -> id_do_cliente, nome, tipo de conta, poupanca - 1 para sim 2 para nao
+
+Historico
+Valor e tipo de transação (D S E)

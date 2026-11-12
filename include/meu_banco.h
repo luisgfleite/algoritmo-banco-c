@@ -2,7 +2,6 @@
 #define MEUBANCO_H
 
 typedef struct cliente {
-	int id;
 	char nome[50];
 	int tipo_conta;
 	int poupanca; // 1 para sim - 2 para nao;
@@ -14,7 +13,10 @@ typedef struct carteira {
 	float saldo_poupanca;
 	int emprestimo; // 1 para sim s ou 2 para nao;
 	float limite_emprestimo;
+	int numeroConta;
+	int historicoValor[10];
+	char historicoOperacao[10];
 
-} Carteira;
+} CarteiraCliente;
 
 #endif

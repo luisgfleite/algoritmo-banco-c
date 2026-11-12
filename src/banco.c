@@ -2,3 +2,6 @@
 #include <stlib.h>
 #include "../include/meu_banco.h"
 
+int AbrirBanco() {
+    
+}
