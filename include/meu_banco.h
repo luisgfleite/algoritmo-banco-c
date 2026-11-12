@@ -1,5 +1,20 @@
 #ifndef MEUBANCO_H
 #define MEUBANCO_H
 
+typedef struct cliente {
+	int id;
+	char nome[50];
+	int tipo_conta;
+	int poupanca; // 1 para sim - 2 para nao;
+} Cliente;
+
+typedef struct carteira {
+	Cliente cliente;
+	float saldo;
+	float saldo_poupanca;
+	int emprestimo; // 1 para sim s ou 2 para nao;
+	float limite_emprestimo;
+
+} Carteira;
 
 #endif

@@ -1,2 +1,4 @@
-#include "../include/meu_banco.h";
+#include <stdio.h>
+#include <stlib.h>
+#include "../include/meu_banco.h"
 
