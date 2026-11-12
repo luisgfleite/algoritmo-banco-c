@@ -2,6 +2,7 @@
 #define MEUBANCO_H
 
 typedef struct cliente {
+	int id;
 	char nome[50];
 	int tipo_conta;
 	int poupanca; // 1 para sim - 2 para nao;
