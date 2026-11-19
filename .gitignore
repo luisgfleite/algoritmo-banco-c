@@ -1,0 +1,14 @@
+# VS Code
+.vscode/
+
+# Pastas de IA
+.claude/
+.cursor/
+.opencode/
+.antigravity/
+.agent/
+.blackbox/
+.amazonq/
+
+# Executavel gerado pelo gcc
+*.exe
