@@ -22,9 +22,9 @@ typedef struct carteira {
 	Cliente cliente;
 	float saldo;
 	float saldo_poupanca;
-	int emprestimo; // 1 para sim s ou 2 para nao;
+	int emprestimo; // 1 para sim ou 2 para nao;
 	float limite_emprestimo;
-	int numeroConta; // Base de quatro dígitos, antes do código do tipo.
+	int numeroConta; // base 4 digitos
 	int historicoValor[10];
 	char historicoOperacao[10];
 
@@ -36,10 +36,8 @@ typedef struct {
 } Banco;
 
 int AbrirBanco(Banco *banco, size_t quantidade);
-int CadastrarCliente(Banco *banco, size_t posicao, const char nome[],
-                     int tipo_conta, int poupanca);
-int FormatarNumeroConta(const CarteiraCliente *carteira, int tipo_conta,
-                        char numero[TAMANHO_NUMERO_CONTA]);
+int CadastrarCliente(Banco *banco, size_t posicao, const char nome[], int tipo_conta, int poupanca);
+int FormatarNumeroConta(const CarteiraCliente *carteira, int tipo_conta, char numero[TAMANHO_NUMERO_CONTA]);
 void FecharBanco(Banco *banco);
 
 #endif
