@@ -34,6 +34,7 @@ int CadastrarCliente(Banco *banco, size_t posicao, const char nome[],
 		return 0;
 	}
 
+	carteira.cliente.id = (int)posicao + 1;
 	strcpy(carteira.cliente.nome, nome);
 	carteira.cliente.tipo_conta = tipo_conta;
 	carteira.cliente.poupanca = poupanca;
@@ -41,6 +42,22 @@ int CadastrarCliente(Banco *banco, size_t posicao, const char nome[],
 	carteira.numeroConta = 1000 + (int)posicao;
 
 	banco->carteiras[posicao] = carteira;
+	return 1;
+}
+
+int FormatarNumeroConta(const CarteiraCliente *carteira, int tipo_conta,
+                        char numero[TAMANHO_NUMERO_CONTA]) {
+	int contaPrincipal = tipo_conta == carteira->cliente.tipo_conta;
+	int poupancaAdicional = tipo_conta == CONTA_POUPANCA &&
+	                        carteira->cliente.poupanca == 1;
+
+	if (tipo_conta < CONTA_CORRENTE || tipo_conta > CONTA_POUPANCA ||
+	    (!contaPrincipal && !poupancaAdicional)) {
+		return 0;
+	}
+
+	snprintf(numero, TAMANHO_NUMERO_CONTA, "%04d-%02d",
+	         carteira->numeroConta, tipo_conta);
 	return 1;
 }
 
